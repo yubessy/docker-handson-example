@@ -5,7 +5,7 @@ RUN groupadd appgroup && \
     mkdir /opt/myapp && \
     chgrp -R appgroup /opt/myapp && \
     chown -R appuser /opt/myapp && \
-    pip install flask>=${FLASK_VER}
+    pip install "flask>=${FLASK_VER}"
 COPY --chown=appuser:appgroup main.py /opt/myapp/main.py
 USER appuser
 WORKDIR /opt/myapp
